@@ -14,17 +14,17 @@ Define the symbols, sectors, countries, and benchmarks that matter.
 
 Capture repeatable event-to-asset mappings.
 
-| Trigger | Positive exposure | Negative exposure | Key observables | Notes |
-| --- | --- | --- | --- | --- |
-| TODO | TODO | TODO | TODO | TODO |
+| Trigger | Positive exposure | Negative exposure | Key observables | Thresholds / breakpoints | Notes |
+| --- | --- | --- | --- | --- | --- |
+| TODO | TODO | TODO | TODO | TODO | TODO |
 
 ## 3. Historical analog library
 
 Store compact examples of prior events and what actually moved price.
 
-| Date | Event | Assets affected | Immediate move | Lagged move | What mattered most | Source |
-| --- | --- | --- | --- | --- | --- | --- |
-| TODO | TODO | TODO | TODO | TODO | TODO | TODO |
+| Date | Event | Assets affected | Immediate move | Lagged move | What mattered most | What the market mispriced | Source |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
 
 ## 4. Supply-chain or industry logic
 
@@ -64,6 +64,16 @@ Document the views and guardrails that should override generic model behavior.
 - Cases where the team prefers `insufficient evidence` over a fast answer:
 - Compliance or disclosure rules:
 
+## 8. Counterparty objections
+
+Store the strongest repeatable objections from the opposite side.
+
+- Best short argument:
+- Best long argument:
+- What usually gets overstated by bulls:
+- What usually gets overstated by bears:
+- What evidence tends to flip the debate:
+
 ## 中文版模板
 
 如果你们有私域研究、内部判断、历史案例、行业资料，可以按下面这个中文模板补充。没有也没关系，可以先空着。
@@ -80,17 +90,17 @@ Document the views and guardrails that should override generic model behavior.
 
 记录可重复使用的“事件 -> 资产反应”映射。
 
-| 触发因素 | 利好谁 | 利空谁 | 重点观察指标 | 备注 |
-| --- | --- | --- | --- | --- |
-| 待填写 | 待填写 | 待填写 | 待填写 | 待填写 |
+| 触发因素 | 利好谁 | 利空谁 | 重点观察指标 | 关键阈值 / 断裂点 | 备注 |
+| --- | --- | --- | --- | --- | --- |
+| 待填写 | 待填写 | 待填写 | 待填写 | 待填写 | 待填写 |
 
 ### 3. 历史类比事件库
 
 用简洁方式沉淀过去发生过什么、当时价格怎么走、真正驱动因素是什么。
 
-| 日期 | 事件 | 受影响资产 | 短期反应 | 滞后反应 | 最关键驱动 | 来源 |
-| --- | --- | --- | --- | --- | --- | --- |
-| 待填写 | 待填写 | 待填写 | 待填写 | 待填写 | 待填写 | 待填写 |
+| 日期 | 事件 | 受影响资产 | 短期反应 | 滞后反应 | 最关键驱动 | 当时市场误判了什么 | 来源 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 待填写 | 待填写 | 待填写 | 待填写 | 待填写 | 待填写 | 待填写 | 待填写 |
 
 ### 4. 产业链 / 行业逻辑
 
@@ -129,3 +139,13 @@ Document the views and guardrails that should override generic model behavior.
 - 已知的反共识判断：
 - 哪些场景下宁可写“证据不足”：
 - 合规 / 披露限制：
+
+### 8. 对手盘常见反驳
+
+把反方最强的、最常重复出现的反驳沉淀下来。
+
+- 最强空头观点：
+- 最强多头观点：
+- 多头最容易高估什么：
+- 空头最容易高估什么：
+- 哪些证据会真正改变双方立场：
