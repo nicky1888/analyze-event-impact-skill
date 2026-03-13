@@ -1,0 +1,252 @@
+---
+name: analyze-event-impact
+description: Analyze how wars, policy changes, regulation, geopolitics, public-opinion shocks, supply disruptions, earnings, or other events may affect prices, sectors, commodities, currencies, or single names. Use when the user asks for event-driven market analysis, wants a client-facing impact note, or needs proprietary research/context turned into a structured view of first-order and second-order market effects.
+---
+
+# Analyze Event Impact
+
+## Overview
+
+Use this skill to convert an event into a defensible market-impact analysis.
+
+Treat the skill as the workflow shell, not the moat. The moat is the private context: historical analogs, supply-chain logic, asset sensitivities, house views, and watchlists. Use a strong model, but reduce model variance by giving it better context, a tighter reasoning path, and a fixed output schema.
+
+Use the model as a logic pressure tester, not a fact copier. The goal is not merely to restate the news. The goal is to test the user's frame, find expectation gaps, and expose weak links in the implied pricing narrative.
+
+## Working Rules
+
+- Separate `facts`, `inference`, and `unknowns`.
+- Treat `market consensus` and `priced-in degree` as first-class inputs.
+- Prefer `event -> transmission channel -> affected variable -> asset response -> timing`.
+- Prioritize `expectation gap` over generic summary.
+- State assumptions explicitly when the event is incomplete or unconfirmed.
+- Reduce confidence when context is thin; do not fill gaps with generic macro commentary.
+- Avoid naked directional calls unless the user explicitly asks for trading implications.
+- Treat fine-tuning as a later optimization for style or stable structured labels, not the primary way to inject changing market knowledge.
+
+## Minimum Inputs
+
+Get these inputs before writing a full answer. If the user wants a fast first pass, proceed with assumptions and label them.
+
+- Exact event: what happened, where, when, confirmed or rumor.
+- Event stage: start, escalation, digestion, stabilization, or reversal.
+- Market consensus: what the crowd appears to believe already.
+- Priced-in degree: what the user thinks the market has already discounted.
+- Ignored variables: what the user believes the market is underweighting.
+- Asset universe: commodity, index, sector, FX, rates, crypto, single names.
+- Time horizon: intraday, 1-3 days, 1-4 weeks, structural.
+- Audience: internal discussion, client note, sales talking points, PM memo.
+- Available private context: house view, prior event writeups, watchlists, analog cases.
+
+If the user has a private knowledge base, ask them to paste or attach the most decision-relevant parts.
+
+If the user does not have a private knowledge base, do not block. Ask only for:
+- their core hypothesis
+- what they think the market already priced in
+- what variable they think the market is missing
+- the asset and time horizon
+
+This keeps the skill useful for ordinary clients while still improving sharply when proprietary context is available.
+
+## Load Context
+
+1. Read [intake-template.md](./references/intake-template.md) when the user has not yet provided a solid reference frame.
+2. Read [event-impact-framework.md](./references/event-impact-framework.md).
+3. Read [private-context-template.md](./references/private-context-template.md) when house knowledge or proprietary mappings are relevant.
+4. Load only the needed local materials: event libraries, supply-chain maps, sensitivity tables, policy calendars, positioning notes, client watchlists.
+5. Verify live facts and timestamps before discussing recent events.
+6. Prefer high-signal internal context over long generic internet summaries.
+
+## Delivery Formats
+
+Always produce a readable in-chat answer first.
+
+When the output is meant for sharing, also generate:
+- a Markdown report as the editable source of truth
+- a PDF version for distribution
+
+Use the bundled script:
+
+```bash
+./scripts/render_report_pdf.py /path/to/report.md /path/to/report.pdf --preview-png
+```
+
+The script prefers a styled `reportlab` renderer when available and falls back to macOS built-in text rendering otherwise.
+
+For prettier output on machines where dependencies can be installed:
+
+```bash
+python3 -m pip install reportlab
+```
+
+## Workflow
+
+### 1. Build the reference frame
+
+Pin down:
+- what changed today versus what the market already knew
+- whether the event is confirmed, partial, or rumor
+- where the event sits in its lifecycle
+- what the market likely believes already
+- how much of the bad or good case appears priced in
+
+If the user provides a priced-in estimate, treat it as a hypothesis to test rather than a fact.
+
+### 2. Locate the expectation gap
+
+Ask:
+- what outcome is consensus
+- what outcome is underpriced or overdiscounted
+- which branch of the scenario tree is getting too little attention
+- whether the current move is linear while the risk is non-linear
+
+If no expectation gap is visible, say so. A clean `no edge from current information` answer is valid.
+
+### 3. Select the main transmission channels
+
+Typical channels:
+- physical supply disruption
+- demand destruction or demand pull-forward
+- input-cost change
+- policy or regulatory constraint
+- rates, liquidity, and discount-rate repricing
+- FX pass-through
+- positioning unwind or risk-on/risk-off flows
+- reputation or public-opinion shock
+
+### 4. Map channels to tradable objects
+
+Move from mechanism to market objects:
+- broad indices
+- sectors and industries
+- commodities and commodity spreads
+- FX, rates, credit
+- single names
+- second-order beneficiaries and losers
+
+Do not stop at the obvious first-order trade. Look for lagged, cross-asset, or supply-chain effects.
+
+### 5. Stress test the thesis
+
+Always test:
+- alternative explanations
+- what would invalidate the thesis
+- what evidence would confirm it
+- whether the user's priced-in estimate is too high or too low
+- which missing context would most likely flip the conclusion
+
+The model should challenge the user's frame when the logic is weak. Do not simply echo the prompt.
+
+### 6. Set the horizon
+
+Split the view into:
+- immediate reaction
+- short follow-through
+- medium-term persistence
+- what may already be priced in
+
+A good answer usually changes by horizon. Do not force one direction across all horizons.
+
+### 7. Write for the audience
+
+For client-facing outputs:
+- keep language concise and businesslike
+- show mechanism, not just conclusion
+- flag confidence and open questions
+- avoid fake precision
+
+For internal outputs:
+- keep the reasoning path visible
+- list assumptions and missing data
+- note which private context most affected the conclusion
+
+## Output Format
+
+Use this default structure unless the user asks for another format.
+
+Default to high-visual-clarity outputs. Prefer:
+- Markdown tables for scenario comparison, drivers, and asset mapping
+- Mermaid diagrams for event trees, transmission chains, or scenario branches
+- Short bullet conclusions only after the table or diagram
+- If true charts are unavailable, simulate them with clean tables instead of dense prose
+
+When the interface supports multimodal output, provide the visual form in addition to prose, not instead of prose.
+
+### Quick take
+
+1. `一句话博弈结论`
+2. `市场共识 / 已定价判断`
+3. `预期差`
+4. `核心影响路径`
+5. `逻辑盲点 / 被忽视变量`
+6. `受益 / 受损 / 待验证`
+7. `时间维度`
+8. `关键验证信号`
+9. `不确定性`
+
+### Preferred visual block
+
+Start with one compact table like this when useful:
+
+| Scenario | Market view | What is mispriced | Impact on target asset | Key trigger | Confidence |
+| --- | --- | --- | --- | --- | --- |
+| Bear | TODO | TODO | TODO | TODO | Low/Med/High |
+| Base | TODO | TODO | TODO | TODO | Low/Med/High |
+| Bull | TODO | TODO | TODO | TODO | Low/Med/High |
+
+If the reasoning is branch-heavy, add a Mermaid tree:
+
+```mermaid
+flowchart TD
+    A["Event"] --> B["Market consensus"]
+    B --> C["Bear branch"]
+    B --> D["Base branch"]
+    B --> E["Bull branch"]
+```
+
+### Full memo
+
+- `事件定义`
+- `事件阶段、市场共识、已定价判断`
+- `市场已知与新增信息`
+- `预期差与核心博弈`
+- `影响机制拆解`
+- `资产与板块映射`
+- `一阶 / 二阶 / 反身性影响`
+- `时间维度与已定价判断`
+- `反例、失效条件、待补数据`
+- `对客可发送版本` if requested
+
+For client-facing answers, strongly prefer this order:
+1. scenario table
+2. transmission-path table or diagram
+3. concise written interpretation
+4. monitoring checklist
+5. optional PDF export for sharing
+
+## Failure Modes
+
+Avoid these common mistakes:
+- turning every shock into generic `risk-off`
+- mixing confirmed facts with speculative links
+- blindly trusting the user's `priced-in` estimate
+- giving a single universal answer across all horizons
+- skipping industry mechanics or supply-chain detail
+- writing long prose when a table or tree would communicate faster
+- treating the skill itself as the source of truth instead of loading real context
+
+## Reference Maintenance
+
+Keep the skill lean. Put durable domain knowledge in `references/` or nearby project files, not in this file.
+
+When the team learns a new repeatable pattern, add it as:
+- a new row in the analog library
+- a new sensitivity rule
+- a new counterexample
+- a clearer client output example
+
+Keep the boundary clean:
+- the knowledge base answers `what do we know`
+- this skill answers `how do we reason from it`
+
+This is how the skill improves over time without pretending to retrain the model.

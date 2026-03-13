@@ -1,0 +1,4 @@
+interface:
+  display_name: "事件影响分析"
+  short_description: "分析战争、政策、舆情等事件对价格和板块变化的影响路径"
+  default_prompt: "使用 $analyze-event-impact 分析这个事件的预期差、已定价程度和情景树；如果我有私域研究就一起纳入，如果没有就基于我的核心假设先给我高可视化结论，并同步生成可分享的 PDF。"
