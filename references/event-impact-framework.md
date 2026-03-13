@@ -14,7 +14,20 @@ Before reasoning, pin down:
 
 Treat `priced-in` as a hypothesis to test, not a number to obey.
 
-## 2. Classify the event
+## 2. Pull analogs first
+
+Before building a confident thesis, retrieve 2-3 historical analogs.
+
+For each analog, compare:
+
+- What was similar in structure
+- What was different in scale, policy, balance-sheet strength, and positioning
+- What the market first believed
+- What later turned out to be mispriced
+
+If no credible analog exists, say so. Do not force a superficial comparison.
+
+## 3. Classify the event
 
 | Event type | What usually changes first | What to verify early | Common misread |
 | --- | --- | --- | --- |
@@ -25,7 +38,7 @@ Treat `priced-in` as a hypothesis to test, not a number to obey.
 | Earnings / guidance | Volume, margin, pricing power, capex, management credibility | Quality of beat/miss, guide change, positioning | Reading headline EPS without business mix |
 | Macro / rates / liquidity | Real yields, USD, growth expectations, risk appetite | Regime context, prior positioning, revision path | Overreacting to one print in isolation |
 
-## 3. Find the expectation gap
+## 4. Find the expectation gap
 
 Ask:
 
@@ -36,7 +49,7 @@ Ask:
 
 If you cannot locate a plausible expectation gap, do not force one.
 
-## 4. Map the transmission chain
+## 5. Map the transmission chain
 
 Work through these links in order:
 
@@ -46,7 +59,7 @@ Work through these links in order:
 4. Which substitutes, complements, or downstream players move next?
 5. Which markets may react mainly through positioning or sentiment?
 
-## 5. Check the usual channels
+## 6. Check the usual channels
 
 - Physical supply
 - Demand destruction
@@ -58,7 +71,28 @@ Work through these links in order:
 - Positioning unwind
 - Narrative or sentiment amplification
 
-## 6. Split by horizon
+## 7. Identify breakpoints
+
+Ask:
+
+- At what level does the thesis stop being linear?
+- Which threshold would trigger a regime change?
+- What turns a normal selloff into forced deleveraging, demand destruction, or policy intervention?
+
+## 8. Run the counterparty test
+
+Take the opposite seat.
+
+- If the user sounds bullish, answer like a skeptical short or flat PM.
+- If the user sounds bearish, answer like a patient long or strategic buyer.
+
+Force the opposite side to explain:
+
+- Why the user's thesis may be position-biased
+- Which facts are being overweighted or ignored
+- What would make the opposite side change its mind
+
+## 9. Split by horizon
 
 | Horizon | Question |
 | --- | --- |
@@ -67,13 +101,13 @@ Work through these links in order:
 | 1-4 weeks | Which second-order effects matter once desks digest the event? |
 | Structural | What remains true even after the headline premium fades? |
 
-## 7. Score confidence
+## 10. Score confidence
 
 - High: facts are verified, the mechanism is direct, and analogs are strong.
 - Medium: at least one major link is inferred but plausible.
 - Low: the event is rumor-heavy, the asset mapping is weak, or there are no useful analogs.
 
-## 8. Force a counterview
+## 11. Force a counterview
 
 Before finalizing, answer:
 
