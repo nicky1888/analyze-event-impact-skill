@@ -66,7 +66,10 @@ Use the model as a logic pressure tester, not a fact copier. The goal is not mer
 
 - Separate `facts`, `inference`, and `unknowns`.
 - Treat `market consensus` and `priced-in degree` as first-class inputs.
+- Always test the user's thesis from the opposite seat when the user is likely biased by positioning or prior belief.
+- Force at least 2 historical analogs when the event type has precedent.
 - Prefer `event -> transmission channel -> affected variable -> asset response -> timing`.
+- Look for thresholds, breakpoints, and non-linear second-order effects instead of assuming a smooth linear transmission.
 - Prioritize `expectation gap` over generic summary.
 - State assumptions explicitly when the event is incomplete or unconfirmed.
 - Reduce confidence when context is thin; do not fill gaps with generic macro commentary.
@@ -141,7 +144,19 @@ Pin down:
 
 If the user provides a priced-in estimate, treat it as a hypothesis to test rather than a fact.
 
-### 2. Locate the expectation gap
+### 2. Pull historical analogs
+
+Before forming a strong conclusion, retrieve 2-3 analogs from the historical library or from known market history.
+
+For each analog, ask:
+- what made that case structurally similar
+- what was different in positioning, policy, scale, or balance-sheet context
+- what the market initially priced
+- what the market later realized it got wrong
+
+If no good analog exists, say so explicitly instead of forcing a weak comparison.
+
+### 3. Locate the expectation gap
 
 Ask:
 - what outcome is consensus
@@ -151,7 +166,7 @@ Ask:
 
 If no expectation gap is visible, say so. A clean `no edge from current information` answer is valid.
 
-### 3. Select the main transmission channels
+### 4. Select the main transmission channels
 
 Typical channels:
 - physical supply disruption
@@ -163,7 +178,7 @@ Typical channels:
 - positioning unwind or risk-on/risk-off flows
 - reputation or public-opinion shock
 
-### 4. Map channels to tradable objects
+### 5. Map channels to tradable objects
 
 Move from mechanism to market objects:
 - broad indices
@@ -175,7 +190,32 @@ Move from mechanism to market objects:
 
 Do not stop at the obvious first-order trade. Look for lagged, cross-asset, or supply-chain effects.
 
-### 5. Stress test the thesis
+### 6. Identify thresholds and breakpoints
+
+Ask:
+- at what level does the logic stop being linear
+- what threshold would trigger forced selling, demand destruction, policy intervention, margin calls, or liquidity stress
+- what condition would turn a manageable headline into an exponential or reflexive move
+
+Good examples:
+- oil above a specific level triggering demand destruction
+- a regulatory label changing from `investigation` to `formal penalty`
+- a funding market spread crossing a stress threshold
+
+### 7. Run the counterparty test
+
+Assume the opposite seat and attack the thesis directly.
+
+Typical role swaps:
+- if the user sounds bullish, respond as a skeptical short or sidelined fund manager
+- if the user sounds bearish, respond as a patient long or strategic buyer
+
+Force answers to:
+- why is the user's framing possibly biased by position
+- what evidence would make the opposite side comfortable
+- what part of the thesis depends on narrative more than cash flow or mechanics
+
+### 8. Stress test the thesis
 
 Always test:
 - alternative explanations
@@ -186,7 +226,7 @@ Always test:
 
 The model should challenge the user's frame when the logic is weak. Do not simply echo the prompt.
 
-### 6. Set the horizon
+### 9. Set the horizon
 
 Split the view into:
 - immediate reaction
@@ -196,7 +236,7 @@ Split the view into:
 
 A good answer usually changes by horizon. Do not force one direction across all horizons.
 
-### 7. Write for the audience
+### 10. Write for the audience
 
 For client-facing outputs:
 - keep language concise and businesslike
@@ -229,9 +269,11 @@ When the interface supports multimodal output, provide the visual form in additi
 4. `核心影响路径`
 5. `逻辑盲点 / 被忽视变量`
 6. `受益 / 受损 / 待验证`
-7. `时间维度`
-8. `关键验证信号`
-9. `不确定性`
+7. `关键阈值 / 断裂点`
+8. `对手盘反驳`
+9. `时间维度`
+10. `关键验证信号`
+11. `不确定性`
 
 ### Preferred visual block
 
@@ -258,10 +300,13 @@ flowchart TD
 - `事件定义`
 - `事件阶段、市场共识、已定价判断`
 - `市场已知与新增信息`
+- `历史类比与异同点`
 - `预期差与核心博弈`
 - `影响机制拆解`
 - `资产与板块映射`
 - `一阶 / 二阶 / 反身性影响`
+- `关键阈值 / 断裂点`
+- `对手盘视角`
 - `时间维度与已定价判断`
 - `反例、失效条件、待补数据`
 - `对客可发送版本` if requested
